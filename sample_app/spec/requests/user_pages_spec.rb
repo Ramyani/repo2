@@ -32,9 +32,9 @@ describe "signup" do
         fill_in "Confirmation", with: "foobar"
       end
 
-    #  it "should create a user" do
-    #    expect { click_button submit }.to change(User, :count).by(1)
-   #   end
+      it "should create a user" do
+        expect { click_button submit }.to change(User, :count).by(1)
+      end
     end
   end
 end
