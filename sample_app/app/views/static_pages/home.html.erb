@@ -27,10 +27,43 @@
       <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
       sample application.
     </h2>
-
-    <%= link_to "Sign up now!", signup_path, 
-                                class: "btn btn-large btn-primary" %>
   </div>
+<div class="row">
+<div class="span6">
+
+<h3>New users</h3>
+
+
+<ul class="users">
+  <% @users.each do |user| %>
+
+<li><%= gravatar_for user %>
+  <%= link_to user.name, user %></li>
+  <% end %>
+
+</ul>
+</div>
+
+
+
+<div class="span6">
+
+<h3>New Microposts</h3>
+
+
+<ul class ="microposts">
+  <% @microposts.each do |micropost| %>
+
+<li><%= link_to micropost.content, micropost %></li>
+  <% end %>
+
+</ul>
+</div>
+
+</div>
+
+
+
 
   <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
 <% end %> 

@@ -7,6 +7,17 @@ class StaticPagesController < ApplicationController
     if signed_in?
       @micropost  = current_user.microposts.build
       @feed_items = current_user.feed.paginate(page: params[:page])
+
+      else
+
+      #users = User.all
+      #users_rev = users.reverse
+      # @users= users_rev.first 10
+      # @users = User.paginate(page: params[:page])
+
+      @users = User.order("created_at DESC").limit(10)
+      @microposts = Micropost.order("created_at DESC").limit(10)
+
     end
   end
 
